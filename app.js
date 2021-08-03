@@ -14,15 +14,15 @@ const app = Vue.createApp({
   computed: {
     monsterBarStyles() {
       if (this.monsterHealth < 0) {
-        return { width: '0%' };
+        return { width: "0%" };
       }
-      return { width: this.monsterHealth + '%' };
+      return { width: this.monsterHealth + "%" };
     },
     playerBarStyles() {
       if (this.playerHealth < 0) {
-        return { width: '0%' };
+        return { width: "0%" };
       }
-      return { width: this.playerHealth + '%' };
+      return { width: this.playerHealth + "%" };
     },
     mayUseSpecialAttack() {
       return this.currentRound % 3 !== 0;
@@ -32,19 +32,19 @@ const app = Vue.createApp({
     playerHealth(value) {
       if (value <= 0 && this.monsterHealth <= 0) {
         // A draw
-        this.winner = 'draw';
+        this.winner = "draw";
       } else if (value <= 0) {
         // Player lost
-        this.winner = 'monster';
+        this.winner = "monster";
       }
     },
     monsterHealth(value) {
       if (value <= 0 && this.playerHealth <= 0) {
         // A draw
-        this.winner = 'draw';
+        this.winner = "draw";
       } else if (value <= 0) {
         // Monster lost
-        this.winner = 'player';
+        this.winner = "player";
       }
     },
   },
@@ -82,9 +82,9 @@ const app = Vue.createApp({
       this.attackPlayer();
     },
     surrender() {
-      this.winner = 'monster';
-    }
+      this.winner = "Monster";
+    },
   },
 });
 
-app.mount('#game');
+app.mount("#game");
